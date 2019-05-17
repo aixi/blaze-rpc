@@ -65,5 +65,5 @@ add_subdirectory(examples)
 add_subdirectory(protorpc)
 
 
-add_executable(main_test main.cc)
-target_link_libraries(main_test blaze_protobuf_codec)
+add_executable(main_test main.cc protorpc/rpc.pb.cc)
+target_link_libraries(main_test protobuf pthread)

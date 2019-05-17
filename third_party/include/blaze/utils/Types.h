@@ -5,6 +5,7 @@
 #ifndef BLAZE_TYPES_H
 #define BLAZE_TYPES_H
 
+#include <assert.h>
 #include <memory>
 
  namespace blaze

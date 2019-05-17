@@ -62,7 +62,7 @@ public:
     ProtobufCodecLite(const google::protobuf::Message* prototype,
                       std::string_view tag,
                       ProtobufMessageCallback message_cb,
-                      ErrorCallback error_cb) :
+                      ErrorCallback error_cb = DefaultErrorCallback) :
         prototype_(prototype),
         tag_(tag),
         message_cb_(std::move(message_cb)),

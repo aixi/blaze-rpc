@@ -43,7 +43,7 @@ void ProtobufCodecLite::FillEmptyBuffer(Buffer* buf, const google::protobuf::Mes
     assert(buf->ReadableBytes() == 0);
     buf->Append(tag_);
     int payload_bytes = SerializeToBuffer(message, buf);
-    // UnusedVariable(payload_bytes);
+    UnusedVariable(payload_bytes);
     int32_t checksum = ComputeAdler32(buf->Peek(), static_cast<int>(buf->ReadableBytes()));
     buf->AppendInt32(checksum);
     assert(buf->ReadableBytes() == tag_.size() + payload_bytes + kChecksumLen);
